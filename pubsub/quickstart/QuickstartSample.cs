@@ -27,14 +27,14 @@ public class QuickstartSample
         // Your Google Cloud Platform project ID
         string projectId = "YOUR_PROJECT_ID";
 
-        // The name for the new topic
-        string topicName = "my-new-topic";
+        // The id for the new topic
+        string topicId = "my-new-topic";
 
         // The fully qualified name for the new topic
-        string formattedTopicName = PublisherClient.FormatTopicName(projectId, topicName);
+        var topicName = new TopicName(projectId, topicId);
 
         // Creates the new topic
-        Topic topic = publisher.CreateTopic(formattedTopicName);
+        Topic topic = publisher.CreateTopic(topicName);
 
         Console.WriteLine($"Topic {topic.Name} created.");
     }
